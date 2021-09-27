@@ -1,21 +1,21 @@
 #!/usr/bin/env php
 <?php
 
-$sender = getenv('HSMS_SENDER');
-$login = getenv('HSMS_LOGIN');
-$country = getenv('HSMS_COUNTRY');
-$password = getenv('HSMS_PASSWORD');
+$sender = getenv('hsms_sender');
+$login = getenv('hsms_login');
+$country = getenv('hsms_country');
+$password = getenv('hsms_password');
 
-$hostdisplayname = getenv('HOSTDISPLAYNAME');
-$hostoutput = getenv('HOSTOUTPUT');
-$hoststate = getenv('HOSTSTATE');
-$notificationtype = getenv('NOTIFICATIONTYPE');
-$pagernumber = getenv('PAGER_NUMBER');
+$hostdisplayname = getenv('notification_hostdisplayname');
+$hostoutput = getenv('notification_hostoutput');
+$hoststate = getenv('notification_hoststate');
+$notificationtype = getenv('notification_type');
+$pagernumber = getenv('notification_userpager');
 
 require_once "hsms-class.php";
 
 if (strpos($hostdisplayname, ".") !== false) {
-    $hostdisplayname = substr($servicedisplayname, 0, strpos($servicedisplayname, ".")) . "...";
+    $hostdisplayname = substr($hostdisplayname, 0, strpos($hostdisplayname, ".")) . "...";
 }
 
 $message = "[$notificationtype]\n \nHost: $hostdisplayname\nStatus: $hoststate\n \nInfo: $hostoutput";

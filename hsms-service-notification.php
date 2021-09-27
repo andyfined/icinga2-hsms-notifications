@@ -1,17 +1,17 @@
 #!/usr/bin/env php
 <?php
 
-$sender = getenv('HSMS_SENDER');
-$login = getenv('HSMS_LOGIN');
-$country = getenv('HSMS_COUNTRY');
-$password = getenv('HSMS_PASSWORD');
+$country = getenv('hsms_country');
+$login = getenv('hsms_login');
+$password = getenv('hsms_password');
+$sender = getenv('hsms_sender');
 
-$hostdisplayname = getenv('HOSTDISPLAYNAME');
-$notificationtype = getenv('NOTIFICATIONTYPE');
-$pagernumber = getenv('PAGER_NUMBER');
-$servicedisplayname = getenv('SERVICEDISPLAYNAME');
-$serviceoutput = getenv('SERVICEOUTPUT');
-$servicestate = getenv('SERVICESTATE');
+$hostdisplayname = getenv('notification_hostdisplayname');
+$notificationtype = getenv('notification_type');
+$pagernumber = getenv('notification_userpager');
+$servicedisplayname = getenv('notification_servicedisplayname');
+$serviceoutput = getenv('notification_serviceoutput');
+$servicestate = getenv('notification_servicestate');
 
 require_once "hsms-class.php";
 
