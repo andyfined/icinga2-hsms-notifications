@@ -31,5 +31,21 @@ $result = $sms->send($login, $password, $country, $pagernumber, $message, $sende
 // Uncomment the following code for debugging purposes
 /*
 file_put_contents('/tmp/service_output.log', "\n" . $message . "\n", FILE_APPEND | LOCK_EX);
+file_put_contents('/tmp/host_output.log', "Date / Time: " . date("Y-m-d H:i:s")
+                                          . "\n-            "
+                                          . "\nSender:      " . $sender
+                                          . "\nLogin:       " . $login
+                                          . "\nPassword:    " . $password
+                                          . "\nCountry:     " . $country
+                                          . "\nPagernumber: " . $pagernumber
+                                          . "\n-            "
+                                          . "\nHost:        " . $hostdisplayname
+                                          . "\nType:        " . $notificationtype
+                                          . "\nService      " . $servicedisplayname
+                                          . "\nState:       " . $servicestate
+                                          . "\nOutput:      " . $serviceoutput
+                                          . "\n-            "
+                                          . "\n\nMessage: \n" . $message
+                                          . "\n\n---\n---\n\n", FILE_APPEND | LOCK_EX);
 file_put_contents('/tmp/service_output_result.log', "\n" . nl2br($result[1]) . "\n", FILE_APPEND | LOCK_EX);
 */
